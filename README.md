@@ -88,3 +88,35 @@ The NSE function performs the following steps:
 2. execute hydrus
 3. import outputs in file TLEVEL.out
 4. calcule NSE coeficient with mensured and simulated data.
+
+```
+def NSE(x,pasta,ndias,tempo,Vreal,Eta):
+    
+    mudaParametros(pasta,x)
+    rodar_Hydrus(pasta) 
+
+    DATA = TLEVEL(pasta+'/T_Level.out',ndias)
+    if isinstance(DATA, pd.DataFrame):
+        Volume = DATA['Volume'].values
+        ETa = desCum(DATA['sum(vRoot)'].values + DATA['sum(Evap)'].values)
+    
+        NSEv = hyev.nse_c2m(Volume,Vreal)
+        NSEeta = hyev.nse_c2m(ETa,Eta)
+        return [NSEv,NSEeta]        
+ 
+    else:
+        return [-1,-1]
+```
+
+### finaly, we used the barplot function to make and plot the sensitives indices
+```
+variaveis = df_Y.columns
+for i in variaveis:
+    figura,Sensibilidade = barplot(df_Y[i])
+    figura.savefig(pasta + '/'+ estação+ i + '.png' ,dpi=300,bbox_inches='tight')
+    df_si = pd.DataFrame(Sensibilidade, columns = ['S1','ST'])
+    df_Y.to_excel(pasta + '/'+ estação+ i + '.xlsx',index = True,header = True)
+````
+ Out: 
+<img src = "https://github.com/ravellys/Soil-Moisture-estimator-with-Machine-Learn/blob/master/localiza%C3%A7%C3%A3o.png">
+<img src = "https://github.com/ravellys/Soil-Moisture-estimator-with-Machine-Learn/blob/master/localiza%C3%A7%C3%A3o.png">
