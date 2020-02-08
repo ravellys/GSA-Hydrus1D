@@ -66,3 +66,25 @@ nsamples = 3000
 param_values = saltelli.sample(problem,nsamples)
 ```
 
+### Execute all simulations
+
+Here we will execute the NSE function, and create a Y matrix with alls NSE coefficients.```
+```
+Y = []
+START=time.time()
+
+for i in range(len(param_values)): 
+    nse = NSE(param_values[i],pasta,ndias,tempo,Vreal,Eta)
+    Y.append(nse)
+    print(i,*param_values[i],*Y[i])
+
+Y = np.array(Y)
+
+print('total time', str(time.time()-START))
+```
+
+The NSE function performs the following steps:
+1. change hydrus project parameters
+2. execute hydrus
+3. import outputs in file TLEVEL.out
+4. calcule NSE coeficient with mensured and simulated data.
