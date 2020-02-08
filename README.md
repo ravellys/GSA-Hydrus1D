@@ -4,8 +4,10 @@ Evaluate the sensitivity analysis in the hydrodynamics processes is essential to
 
 The data used in this work was provided by the project INCT-ONDACBC (Observatório Nacional da Dinâmica da Água e de Carbono no Bioma Caatinga). The soil moisture was evalueted by TDR sensors in depth of 10, 20, 30, and 40 cm. This tower is located in a seasonal tropical dry forest (Caatinga) in the semi-arid region of Brazil (Serra Talhada - PE) (http://dx.doi.org/10.17190/AMF/1562386).
 
-1º create a project in Hydrus-1D (BRCST_SA_30dias). 
-2º The second step put this project paste and the executable H1D_calc.exe in local disk C:.
-3º create a file with mensured data (SA_30d_Hydrus).
-4º Execute routine 
+
+## Execute the routine:
+1. create a project in Hydrus-1D (BRCST_SA_30dias). 
+2. put this project paste and the executable H1D_calc.exe in local disk C:.
+3. create a file with mensured data (SA_30d_Hydrus).
+4. Execute routine (GSA_hydrus.py)
 
