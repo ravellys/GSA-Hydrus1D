@@ -117,6 +117,28 @@ for i in variaveis:
     df_si = pd.DataFrame(Sensibilidade, columns = ['S1','ST'])
     df_Y.to_excel(pasta + '/'+ estação+ i + '.xlsx',index = True,header = True)
 ````
+
+barplot function use the sobol.analyze to make the GSA:
+```
+def barplot(df):
+    fig = plt.figure(figsize = (5,5))
+    y=df.values
+
+    Si = sobol.analyze(problem,y)
+
+    x=[r'$\theta\ _{r}$', r'$\theta\ _{s}$', r'$\alpha\ $','n','Ks','l']
+    X = np.arange(len(Si['S1']))
+
+    plt.bar(X + 0.00, Si['S1'],color = 'b', width = 0.25, label = r'$S_1$')
+    plt.bar(X + 0.25, Si['ST'],color = 'gray', width = 0.25, label = r'$S_T$')
+    plt.xticks(X+0.125,(x),fontsize = 14)
+    plt.yticks(fontsize = 14)
+    plt.title(df.name,fontsize = 14, family = 'serif') 
+    plt.legend()
+    
+    return [fig,Si]
+```
+
 ### Out: 
 
 <img src = "https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D/blob/master/vol_GSA.png">
