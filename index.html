@@ -1,39 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>Global-sensitivity-analysis-in-hydrus-1d by ravellys</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Global-sensitivity-analysis-in-hydrus-1d</h1>
-        <h2>Global Sensitivy Analyses with package SALib to evaluated the Hydrus-1D software simulation in vadose zone of the soil</h2>
-        <a href="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ravellys/GSA-Hydrus1D">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ravellys/GSA-Hydrus1D/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ravellys/GSA-Hydrus1D/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a id="global-sensitivity-analysis-gsa-in-hydrus-1d" class="anchor" href="#global-sensitivity-analysis-gsa-in-hydrus-1d" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Global Sensitivity Analysis (GSA) in Hydrus-1D</h1>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Global-sensitivity-analysis-in-hydrus-1d</h1>
+          <p>Global Sensitivy Analyses with package SALib to evaluated the Hydrus-1D software simulation in vadose zone of the soil</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ravellys">ravellys</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="global-sensitivity-analysis-gsa-in-the-hydrodynamic-parameters-in-the-software-hydrus-1d" class="anchor" href="#global-sensitivity-analysis-gsa-in-the-hydrodynamic-parameters-in-the-software-hydrus-1d" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Global Sensitivity Analysis (GSA) in the hydrodynamic parameters in the software Hydrus-1D</h1>
 <p>Evaluate the sensitivity analysis in the hydrodynamics processes is essential to understand the parameters' influence in the Soil Water Content (SWC). This analysis allows the determination of hydrodynamic parameters with better accuracy. In this context, this project evaluated GSA in a robust Hydrus-1D model. For this, was used the Sobol Sensitivity Analysis (DOI:10.1016/S0378-4754(00)00270-6) presents in the SALib library. The objective function used was the NSE coefficient, which compared the measured and simulated SWC.</p>
 <p>The data used in this work was provided by the flux tower of the project INCT-ONDACBC (Observatório Nacional da Dinâmica da Água e de Carbono no Bioma Caatinga), which is in a seasonal tropical dry forest (Caatinga) in the semi-arid region of Brazil (Serra Talhada - PE). Besides, TDR sensors evaluated the soil moisture for depths of 10, 20, 30, and 40 cm (<a href="http://dx.doi.org/10.17190/AMF/1562386">http://dx.doi.org/10.17190/AMF/1562386</a>).</p>
 <p>Localization towers area:
-<img src="https://github.com/ravellys/Soil-Moisture-estimator-with-Machine-Learn/blob/master/localiza%C3%A7%C3%A3o.png"></p>
+<img src="localiza%C3%A7%C3%A3o.png"></p>
 <h2>
 <a id="execute-the-routine" class="anchor" href="#execute-the-routine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute the routine:</h2>
 <ol>
@@ -156,27 +166,12 @@ for i in variaveis:
 </code></pre>
 <h3>
 <a id="out" class="anchor" href="#out" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Out:</h3>
-<img src="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D/blob/master/vol_GSA.png">
-<img src="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D/blob/master/eta_GSA.png">
-        </section>
+<img src="vol_GSA.png">
+<img src="eta_GSA.png">
+      </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/ravellys/Global-Sensitivity-Analysis-in-Hydrus-1D"></a> is maintained by <a href="https://github.com/ravellys">ravellys</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
     </div>
-
-  
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
